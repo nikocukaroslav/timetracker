@@ -15,8 +15,7 @@ namespace timetracker.Server.API.User
             Field<ListGraphType<UsersResponseType>>("GetUsers")
                .ResolveAsync(async context =>
                {
-                   var users = await userRepository.GetAllAsync();
-                   return users;
+                   return await userRepository.GetAllAsync();
                });
 
             Field<UserType>("GetUser")
